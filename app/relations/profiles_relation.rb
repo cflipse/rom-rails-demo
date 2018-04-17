@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 class ProfilesRelation < ROM::Relation[:sql]
+
   gateway :default
 
   schema(:profiles, infer: true)
@@ -8,4 +11,5 @@ class ProfilesRelation < ROM::Relation[:sql]
   # def all
   #   select(:id, :name).order(:id)
   # end
+
 end
