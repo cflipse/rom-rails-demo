@@ -31,7 +31,15 @@ module RomRailsDemo
     # the framework and any gems in your application.
 
     # Don't generate system test files.
-    config.generators.system_tests = nil
+    # config.generators.system_tests = nil
+
+    config.generators do |g|
+      g.system_tests :rspec
+      g.test_framework :rspec
+      g.helper false
+      g.javascripts false
+      g.stylesheets false
+    end
 
   end
 end
