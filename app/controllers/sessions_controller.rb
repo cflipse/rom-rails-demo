@@ -5,7 +5,13 @@ class SessionsController < ApplicationController
   protect_from_forgery except: "create"
 
   def create
-    @auth = request.env["omniauth.auth"].to_h
+    warden.authenticate!
+    redirect_to "/"
+  end
+
+  def destroy
+    warden.logout
+    redirect_to "/"
   end
 
 end
