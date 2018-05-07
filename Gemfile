@@ -50,6 +50,7 @@ group :development, :test do
   gem "dotenv-rails"
 
   gem "rspec-rails"
+  gem "capybara"
 end
 
 group :development do
