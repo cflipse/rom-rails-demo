@@ -12,6 +12,7 @@ gem "actionmailer"
 gem "actionpack"
 gem "actionview"
 gem "activemodel"
+gem "actioncable"
 gem "sprockets-rails"
 
 # Use Puma as the app server
