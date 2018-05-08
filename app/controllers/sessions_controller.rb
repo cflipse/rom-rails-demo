@@ -4,6 +4,10 @@ class SessionsController < ApplicationController
 
   protect_from_forgery except: "create"
 
+  def new
+    flash.now[:alert] = warden.message if warden.message.present?
+  end
+
   def create
     warden.authenticate!
     redirect_to "/"

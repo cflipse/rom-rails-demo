@@ -2,7 +2,8 @@
 
 Rails.application.config.middleware.use OmniAuth::Builder do
   provider :developer unless Rails.env.production?
-  provider :google_oauth2, ENV["GOOGLE_CLIENT_ID"], ENV["GOOGLE_CLIENT_SECRET"]
+  provider :google_oauth2, ENV["GOOGLE_CLIENT_ID"], ENV["GOOGLE_CLIENT_SECRET"],
+    hd: "devcaffeine.com"
 end
 
 Rails.application.config.middleware.use Warden::Manager do |manager|
@@ -32,6 +33,8 @@ Warden::Strategies.add(:omniauth) do
   def authenticate!
     if omniauth.info.email.blank?
       fail "no email found!"
+    elsif !omniauth.info.email.match?(/@devcaffeine.com$/)
+      fail "not authorized for your domain!"
     else
       success! omniauth
     end
