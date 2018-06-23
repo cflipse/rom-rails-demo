@@ -1,0 +1,7 @@
+<h1>Sign in</h1>
+
+<% unless Rails.env.production? %>
+  <%= link_to "developer", '/auth/developer' %>
+<% end %>
+
+<%= link_to "Google Auth", "/auth/google_oauth2" %>

@@ -1,0 +1,6 @@
+<% if logged_in? %>
+  <h1>Welcome <%= current_user.name %></h1>
+  <%= link_to "logout", logout_path %>
+<% else %>
+  Hi guest.  Would you like to <%= link_to "tell me who you are?", login_path %>
+<% end %>

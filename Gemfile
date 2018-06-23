@@ -12,6 +12,7 @@ gem "actionmailer"
 gem "actionpack"
 gem "actionview"
 gem "activemodel"
+gem "actioncable"
 gem "sprockets-rails"
 
 # Use Puma as the app server
@@ -27,6 +28,10 @@ gem "pg"
 gem "rom-rails"
 gem "rom-repository"
 gem "rom-sql"
+
+gem "omniauth"
+gem "omniauth-google-oauth2"
+gem "warden"
 
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem "turbolinks", "~> 5"
@@ -49,6 +54,7 @@ group :development, :test do
   gem "dotenv-rails"
 
   gem "rspec-rails"
+  gem "capybara"
 end
 
 group :development do
